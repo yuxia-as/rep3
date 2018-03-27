@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Travel-Hotel.Tickets</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0 user-scalable=no">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<script src="js/TouchSlide.1.1.js"></script>
+</head>
+<body>
+	<header>
+		<a href="">About us</a>
+		<a href="">LogIn/Register</a>
+	</header>
+	<div class="search-box" id="search-box">
+		<div>
+			<input type="text" placeholder="Search:Destination/Hotel/Flights">
+		</div>
+		<a href=""><span>my search</span></a>
+	</div>
+	<section id="slides">
+		<div id="focus" class="focus">
+			<div class="hd">
+				<ul></ul>
+			</div>
+			<div class="bd">
+				<ul>
+						<li><a href="#"><img src="images/s1.jpg" /></a></li>
+						<li><a href="#"><img src="images/s2.jpg" /></a></li>
+						<li><a href="#"><img src="images/s4.jpg" /></a></li>
+				</ul>
+			</div>
+		</div>
+			</div>
+		</div>
+
+	</section>
+	<nav>
+		<div class="row">
+			<div class="col"><a href="#">Hotel</a></div>
+			<div class="col"><a href="#">Overboard Hotel</a><a href="#">Hotel on Sale</a></div>
+			<div class="col"><a href="#">Group Sale</a><a href="#">B&B·Motel</a></div>
+		</div>
+		<div class="row">
+			<div class="col"><a href="#">Tickets</a></div>
+			<div class="col"><a href="#">Train Tickets</a><a href="#">Flight Tickets</a></div>
+			<div class="col"><a href="#">Bus Tickets</a><a href="#">Rent a Car</a></div>
+		</div>
+		<div class="row">
+			<div class="col"><a href="#">Tour·Attractions</a><a href="#">Gift Cards</a></div>
+			<div class="col"><a href="#">Food</a><a href="#">Overboard WiFi</a></div>
+			<div class="col"><a href="#">Currency Exchange</a><a href="#">Insurance·Visa</a></div>
+		</div>
+	</nav>
+	<section class="destination">
+		<div class="top">
+			<span>Population Destintion</span>
+			<span><a href="">More+</a></span>
+		</div>
+		<ul>
+			<li><img src="images/c1.jpg" alt=""><span>HOT</span><a>Cancun</a></li>
+			<li><img src="images/c2.jpg" alt=""><a>Orlando</a></li>
+			<li><img src="images/c3.jpg" alt=""><a>Los Angeles</a></li>
+		</ul>
+	</section>
+	<section class="deals">
+		<div class="title">Deals</div>
+		<ul>
+			<li><a href=""><img src="images/d2.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/d1.jpg" alt=""></a></li>
+			<li><span><!-- Last Minute Deals: --></span><span></span><a href=""><img src="images/d3.jpg" alt=""></a></li>
+		</ul>
+	</section>
+	<footer>
+		<ul>
+			<li><a href="#">Contat Us</a></li>
+			<li><a href="#">Download APP</a></li>
+			<li><a href="#">My List</a></li>
+		</ul>
+		<div>@2018   come out to see the world</div>
+	</footer>
+<script type="text/javascript">
+	
+	TouchSlide({ 
+		slideCell:"#focus",
+		titCell:".hd ul", 
+		mainCell:".bd ul", 
+		effect:"leftLoop", 
+		autoPlay:true,
+		autoPage:true 
+	});
+
+	// keep search box on the top
+	var box = document.getElementById('search-box');
+	var box_top = box.offsetTop;
+	document.onscroll = function(){
+		var scroll_dis = document.body.scrollTop || document.documentElement.scrollTop;
+		if(scroll_dis>=box_top){
+			box.style.position = "fixed";
+			box.style.top="0";
+		// }
+		}else{
+			box.style.position = "relative";
+			box.style.top="";
+		}
+
+	}
+
+	// adjust images ratio.
+	var win_resize = function(){
+		var slide = document.getElementById('slides');
+		slide.style.height = document.documentElement.clientWidth*320/1199+'px';
+	}
+	win_resize();
+	window.onresize = win_resize;
+</script>
+</body>
+</html>
